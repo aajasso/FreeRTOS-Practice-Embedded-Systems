@@ -110,6 +110,7 @@ int main(void)
 
     tcpip_init(NULL, NULL);
 
+
     netifapi_netif_add(&netif, &netif_ipaddr, &netif_netmask, &netif_gw, &enet_config, EXAMPLE_NETIF_INIT_FN,// configura las direcciones
                        tcpip_input);
     netifapi_netif_set_default(&netif);
@@ -128,7 +129,7 @@ int main(void)
 
     tcpecho_init();
 
-    sys_thread_new("aescrc_task", aescrc_test_task, NULL, 1024, 4);
+    //sys_thread_new("aescrc_task", aescrc_test_task, NULL, 1024, 4);
 
     vTaskStartScheduler();
 
